@@ -3,9 +3,12 @@ SmolTalk by HuggingFace. Good "general" conversational dataset.
 https://huggingface.co/datasets/HuggingFaceTB/smol-smoltalk
 We use the "smol" version, which is more appropriate for smaller models.
 """
+import os
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 from datasets import load_dataset
 from tasks.common import Task
+
 
 class SmolTalk(Task):
     """ smol-smoltalk dataset. train is 460K rows, test is 24K rows. """

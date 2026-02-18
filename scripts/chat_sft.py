@@ -12,6 +12,8 @@ torchrun --standalone --nproc_per_node=8 -m scripts.chat_sft -- --device-batch-s
 import argparse
 import os
 os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
 import time
 import wandb
 import torch
@@ -29,6 +31,7 @@ from tasks.mmlu import MMLU
 from tasks.smoltalk import SmolTalk
 from tasks.customjson import CustomJSON
 from tasks.spellingbee import SimpleSpelling, SpellingBee
+
 
 # -----------------------------------------------------------------------------
 # CLI arguments
