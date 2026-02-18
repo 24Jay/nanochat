@@ -113,8 +113,14 @@ train_dataset = TaskMixture([
     GSM8K(subset="main", split="train"), # 2 epochs of GSM8K
     CustomJSON(filepath=identity_conversations_filepath), # 1000 rows of synthetic identity conversations
     CustomJSON(filepath=identity_conversations_filepath), # let's do 2 epochs of these
-    SimpleSpelling(size=200000, split="train"), # 200K rows of Simple Spelling (e.g. spell the word 'apple')
-    SpellingBee(size=80000, split="train"), # 80K rows of Spelling Bee (e.g. how many 'r' are in 'strawberry'?)
+    #################################################
+    #################################################
+    #################################################
+    #################################################
+    #################################################
+    ####################网络问题#############################
+    # SimpleSpelling(size=200000, split="train"), # 200K rows of Simple Spelling (e.g. spell the word 'apple')
+    # SpellingBee(size=80000, split="train"), # 80K rows of Spelling Bee (e.g. how many 'r' are in 'strawberry'?)
 ]) # total: 460K + 100K + 16K + 200K + 80K = 856K rows
 val_dataset = TaskMixture([
     SmolTalk(split="test"), # 24K rows in test set
